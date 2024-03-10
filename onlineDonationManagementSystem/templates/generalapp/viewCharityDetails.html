@@ -1,0 +1,31 @@
+{% extends 'Navbar/generalnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        {% for charityDetails in view_charity_detail %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ charityDetails.org_name }}</h5>
+                    <p class="card-text">Purpose: {{ charityDetails.purpose }}</p>
+                    <p class="card-text">Location: {{ charityDetails.location }}</p>
+                    <p class="card-text">Organization Type: {{ charityDetails.org_type }}</p>
+
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="deletecharity/{{charityDetails.id}}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

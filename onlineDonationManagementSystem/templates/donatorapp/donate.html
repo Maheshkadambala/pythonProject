@@ -1,0 +1,24 @@
+{% extends 'Navbar/donatornavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donate</title>
+</head>
+<body>
+{% block body %}
+<div>
+<h1 align="center"> Online Donation Management System </h1>
+<h3> Donate amount</h3></div>
+<div class="card" style="width: 18rem;">
+  <img src="{% static 'images/charity1.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Charity</h5>
+    <p class="card-text">Mothertherisa charity.</p>
+    <a href="{% url 'successpage' %}" class="btn btn-primary">Donate</a>
+  </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

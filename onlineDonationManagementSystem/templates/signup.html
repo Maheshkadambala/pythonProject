@@ -1,0 +1,70 @@
+{% extends 'Navbar/donatornavbar.html' %}
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Registration Form | CodingLab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="height: 100vh; display: flex; justify-content: center; align-items: center; padding: 10px; background: linear-gradient(135deg, #71b7e6, #9b59b6);">
+{% block body %}
+{% if messages %}
+{% for message in messages %}
+{% if message.tags %}
+<script>alert ("{{ message }}")</script>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+  <div class="container" style="max-width: 700px; width: 100%; background-color: #fff; padding: 25px 30px; border-radius: 5px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);">
+    <div class="title" align="center" style="font-size: 25px; font-weight: 500; position: relative;">Registration Form</div><br>
+    <div class="content">
+      <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" name="first_name" placeholder="Enter your First Name" required style="height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;">
+          </div>
+          <br>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" name="last_name" placeholder="Enter your last name" required style="height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;">
+          </div>
+
+          <br>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="username" placeholder="Enter your username" required style="height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;">
+          </div>
+          <br>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email" required style="height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;">
+          </div>
+          <br>
+
+
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="password" placeholder="Enter your password" required style="height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;">
+          </div>
+          <br>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" name="confirm_password" placeholder="Confirm your password" required style="height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;">
+          </div>
+
+        </div>
+        <div class="button" style="height: 45px; margin: 35px 0;">
+          <input type="submit" value="Register" style="height: 100%; width: 100%; border-radius: 5px; border: none; color: #fff; font-size: 18px; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; background: linear-gradient(135deg, #71b7e6, #9b59b6);">
+        </div>
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+
+</html>

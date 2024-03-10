@@ -1,0 +1,37 @@
+{% extends 'Navbar/donatornavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donate</title>
+</head>
+<body>
+{% block body %}
+<div class="container" style="max-width: 700px; width: 100%; background-color: #fff; padding: 25px 30px; border-radius: 5px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);">
+    <div class="title" align="center" style="font-size: 25px; font-weight: 500; position: relative;">Donation</div><br>
+    <div class="content">
+      <form method="post" action="{% url 'successpage' %}">
+        {% csrf_token %}
+        <div class="user-details">
+
+          <div class="input-box">
+            <span class="details">Donor Name</span>
+            <input type="text" name="uname" placeholder="Enter Donar Name" required style="height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;">
+          </div>
+          <br>
+            <div class="input-box">
+            <span class="details">Amount</span>
+            <input type="text" name="amt" placeholder="Enter in INR" required style="height: 45px; width: 100%; outline: none; font-size: 16px; border-radius: 5px; padding-left: 15px; border: 1px solid #ccc; border-bottom-width: 2px; transition: all 0.3s ease;">
+          </div>
+
+        </div>
+        <div class="button" style="height: 45px; margin: 35px 0;">
+          <input type="submit" value="Donate" style="height: 100%; width: 100%; border-radius: 5px; border: none; color: #fff; font-size: 18px; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; background: linear-gradient(135deg, #71b7e6, #9b59b6);">
+        </div>
+
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+</html>
